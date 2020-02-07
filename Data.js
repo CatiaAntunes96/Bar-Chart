@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+
+
 let yMargin = 40,
 width = 800,
 heigth = 400,
@@ -91,7 +95,7 @@ d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
     //Select max gdp value
     let maxGDP = d3.max(GDP)
     
-    
+    //scale the values
     let linearScale = d3.scaleLinear()
                         .domain([0, maxGDP])
                         .range([0, heigth]);
@@ -99,6 +103,7 @@ d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
     scaleGDP = GDP.map(el => {
         return linearScale(el)
     })
+    console.log(scaleGDP)
     //defines range and domain for y axis
     let yAxisScale = d3.scaleLinear()
                         .domain([0, maxGDP])
@@ -161,3 +166,4 @@ d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
 
 })
 
+})
