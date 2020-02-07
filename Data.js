@@ -6,7 +6,8 @@ barWidth = width/275;
 let svgContainer = d3.select(".svg-container")
 .append("svg")
 .attr('width', width + 100)
-.attr('heigth', heigth + 60);
+.attr('heigth', heigth + 60)
+.attr('class', "svg" );
 
 let tooltip = d3.select(".svg-container")
                 .append("div")
@@ -83,7 +84,7 @@ d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
         return el[1]
     })
     
-    //let scaleGDP = [];
+    let scaleGDP = [];
 
     //Select min GDP value
     let minGDP = d3.min(GDP)
@@ -95,7 +96,7 @@ d3.json("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
                         .domain([0, maxGDP])
                         .range([0, heigth]);
     
-    let scaleGDP = GDP.map(el => {
+    scaleGDP = GDP.map(el => {
         return linearScale(el)
     })
     //defines range and domain for y axis
