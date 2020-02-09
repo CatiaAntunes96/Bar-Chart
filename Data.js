@@ -23,10 +23,11 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         .attr('transform', 'rotate(-90)')
         .attr('x', -200)
         .attr('y', 80)
+        .attr("font-weight", 600)
         .text('Gross Domestic Product');
       
       svgContainer.append('text')
-        .attr('x', width/2 + 120)
+        .attr('x', width/2 + 90)
         .attr('y', height + 50)
         .text('More Information: http://www.bea.gov/national/pdf/nipaguid.pdf')
         .attr('class', 'info');
@@ -68,6 +69,7 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
       let xAxisGroup = svgContainer.append('g')
         .call(xAxis)
         .attr('id', 'x-axis')
+        .attr("font-size", 13)
         .attr('transform', 'translate(60, 400)');
       
     //Return de gpd´s values
@@ -95,6 +97,7 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
       let yAxisGroup = svgContainer.append('g')
         .call(yAxis)
         .attr('id', 'y-axis')
+        .attr("font-size", 12)
         .attr('transform', 'translate(60, 0)');
         
     //Add the bar to each data
@@ -111,7 +114,7 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         .attr('height', function(d) {
           return d;
         })
-        .style('fill', '#33adff')
+        .style('fill', '#ffa625')
         .attr('transform', 'translate(60, 0)')
         .on('mouseover', function(d, i) {
           overlay.transition()
