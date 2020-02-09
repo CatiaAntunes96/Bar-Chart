@@ -13,9 +13,7 @@
         background-size: 64px 128px;
     }
 
-    .svg{
-        overflow: inherit;
-    }
+   
 
     .main-content .container {
         height: 560px;
